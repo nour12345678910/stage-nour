@@ -1,0 +1,39 @@
+<!-- Preload the Whole Page -->
+<div id="preloader">      
+    <div id="loading-animation">&nbsp;</div>
+  </div>
+  
+  
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+      <!-- Brand and toggle get grouped for betterteam-section mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <h1 style="font-style:italic; color:grey;">She Shop </h1>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navigation-nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a class="section-scroll" href="#wrapper">Home</a></li>
+            <li ><a href="#landing-offer">Products</a></li>
+            <li *ngIf=" !isUser"><a   routerLink="/signup" >Sign up</a></li>
+            <li *ngIf=" !isUser" ><a routerLink="/login">Log in</a></li>
+            <li *ngIf="isUser" ><a  [routerLink]="['/cart']" ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+            <li ><a routerLink="/authadmin">Admin</a></li>
+            <li *ngIf=" isUser"><button class="btn btn-danger" (click)="logout()">Logout</button></li>
+
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+  </header>
+  <!-- End Navbar -->
+  

@@ -1,0 +1,26 @@
+
+table,tr,td,th{
+    border: 2px solid grey;
+}
+table{text-align: center;
+margin-left: 300px;
+margin-bottom: 100px;}
+
+
+
+
+thead{
+    border-bottom: 3px solid grey;
+}
+tr{
+    border-bottom: 2px solid grey;
+}
+
+tr{
+    border-right: 2px solid grey;
+    padding: 8px 15px;
+}
+
+.btn{
+    margin: 3px;
+}

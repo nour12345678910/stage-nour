@@ -1,0 +1,63 @@
+ 
+ <!-- 2  eme banner
+  ================================================== -->
+  <section>
+    <div id="clients-section" class="clients-bg2" data-stellar-background-ratio="0" >
+      </div> 
+  </section>
+        
+        <section>
+            <div id="features-section" class="pad-sec">
+        
+              <div class="container">
+                <div class="title-section text-center animated out" data-animation="fadeInUp" data-delay="0">
+                    <div class="row">
+                      <div class="col-sm-8 col-sm-offset-2">
+                        <h2>Sign Up</h2>
+                        <hr>
+                        </div>
+                        </div>
+                </div>
+                
+<!-- <div style="text-align: center;margin-left: 200px;margin-right: 200px;"> -->
+    <div class="form-wrapper">
+        <div class="row">
+            <h3 style="text-align: center;">Welcome to create your account </h3>
+
+          <div class="col-md-8 col-md-offset-2">
+    <form #f="ngForm" (ngSubmit)="signup(f)">
+        <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Your name" required>
+        <div class="alert alert-danger" *ngIf="name.invalid && name.touched">Name is required</div>
+        
+        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['required']">Email is required</div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?. ['email']">Your input doesn't match email format</div>
+       
+        <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">Password is required</div>
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?. ['minlength']">Password should be 6+ charachters</div>
+
+        
+        <input ngModel name="passwordConfirm" #passwordConfirm="ngModel" type="password" class="form-control" placeholder="Confirm Password" required >
+        <div class="alert alert-danger" *ngIf="passwordConfirm.invalid && passwordConfirm.touched">Password  Confirm is required</div>
+        <div class="alert alert-danger" *ngIf="passwordConfirm.value !== password.value && passwordConfirm.touched">Password are not equals </div>
+
+        <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address" required >
+        <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Address is required</div>
+
+        <input   type="submit" name="submit" value="Create an account" id="submit" class="btn btn-sm btn-dark" style="margin-left: 260px;margin-top: 20px;" [disabled]="f.invalid || passwordConfirm.value !== password.value">
+        <!-- <input type="submit" name="submit" value="Send message" id="submit" class="btn btn-sm btn-dark"> -->
+
+    </form>
+    <!-- <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div> -->
+
+</div> <!-- end col-md-8 -->
+</div> <!-- end row -->
+</div>  <!-- end form-wrapper -->
+
+</div> <!-- end container -->
+
+</div> <!-- End contact-section -->
+</section>
+    <!-- </div>
+</section> -->

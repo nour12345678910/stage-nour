@@ -1,0 +1,31 @@
+<!-- card................................................. -->
+<div class="card" style="width: 18rem;"*ngFor="let item of items ; index as i" style="margin-left: 500px; width:300px" >
+   <ng-container *ngIf="item.id === identifiant">
+
+   <img class="card-img-top" src="{{item.data?.photo}}" alt="Card image cap">
+   <div class="card-body">
+     <h5 class="card-title">{{item?.data.nom}}</h5>
+     <p class="card-text">{{item?.data?.prix}} DT.</p>
+
+     <div class="control">
+	
+      <button class="btn">
+      <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+       <!-- <span>saisir votre mail <input type="text" name="txt"/> </span> -->
+      <button class="btn btn-primary" (click)="addToCart(i)" *ngIf="add !==i" >Add to cart</button>
+      <div *ngIf="add === i">
+   <input type="number" class="form-control" placeholder="Amount" #amount>
+   <button  class="btn btn-primary" (click)="buy(amount.value)">Buy</button>
+   
+      </div>
+   
+    </button>
+      
+   </div>
+   </div>
+   </ng-container>
+ </div>
+
+
+
+   

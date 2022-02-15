@@ -1,0 +1,25 @@
+
+
+
+
+<div class="a" >
+    <div class="container" >
+    <form [formGroup]="productForm"  (ngSubmit)="onSubmit()"><br>
+        <div>Login :<input type="email" name="login" formControlName="login" class="form-control" required="required" pattern="admin@gmail.com"></div><div *ngIf="isvalidlogin()" class="alert alert-warning"value="nour">your login is incorrect !</div><br>
+        <div>Password:<input type="password" name="password" formControlName="password" class="form-control" required="required" pattern="123"></div><div *ngIf="isvalidpassword()" class="alert alert-warning" value="nour">your password is incorrecte !</div><br>
+        <button [routerLink]="['/admin']"  class="btn btn-warning" id="i"  [disabled]="productForm.invalid" >Submit</button>
+        
+</form>
+    </div>
+    </div>
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    

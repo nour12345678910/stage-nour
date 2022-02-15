@@ -1,0 +1,52 @@
+<div class="container">
+
+    <h2> Add New Clothes</h2>
+    <form [formGroup]="Form" (ngSubmit)="onSubmitForm()">
+        <div>
+            <label> Noun</label>
+            <input type="text" class="form-control" formControlName="nom">
+           
+        </div>
+
+        <div>
+            <label> Price</label>
+            <input type="number" class="form-control" formControlName="prix">
+        </div>
+
+     
+        <div>
+            <label> Url of the photo</label>
+            <input  type="text" class="form-control" formControlName="photo">
+            
+        </div>
+       
+        <button type="submit" class="btn btn-outline-info" class="btn btn-primary">submit</button>
+        
+      
+    </form>
+</div>
+<br>
+<table class="table table-striped center table-primary table-bordered" >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Noun</th>
+        <th scope="col">Price</th>
+        <th scope="col">photo</th>
+        <th scope="col">Remove</th>
+
+    </tr>
+    </thead>
+    <tbody>
+  
+     <tr *ngFor="let item of items">
+        <td>{{item.id}}</td>
+        <td>{{item.data.nom}}</td>
+        <td>{{item.data.prix}}</td>
+        <td><img  class="im" [src]="item.data.photo" style="width:50px;height:50px"></td>
+        <td> <button class="btn" (click)="delete(item)" class="btn btn-danger">Remove</button></td>
+      
+      </tr>
+    </tbody>
+  </table>
+

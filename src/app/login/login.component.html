@@ -1,0 +1,42 @@
+
+
+       
+<section>
+  <div id="clients-section" class="clients-bg" data-stellar-background-ratio="0" >
+    </div> 
+</section>
+        
+              <div class="container">
+                <div class="title-section text-center animated out" data-animation="fadeInUp" data-delay="0">
+                  <h2 class="text-center">log in </h2>
+  
+                  <div class="row">
+
+                      <div class="col-sm-8 col-sm-offset-2">
+
+        <hr>
+                        </div>
+                        </div>
+                </div>
+                <div class="form-wrapper">
+                    <div class="row">
+                      <div class="col-md-8 col-md-offset-2">
+    <form #f="ngForm" (ngSubmit)="login(f)">
+        
+        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['required']">Email is required</div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?. ['email']">Your input doesn't match email format</div>
+       
+        <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">Password is required</div>
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?. ['minlength']">Password should be 6+ charachters</div>
+
+        
+        <button class="btn btn-sm btn-dark" [disabled]="f.invalid " style="margin-left: 290px;margin-top: 20px;" >Log in </button>
+        
+    </form>
+</div> <!-- end col-md-8 -->
+</div> <!-- end row -->
+</div>  <!-- end form-wrapper -->
+
+</div> <!-- end container -->

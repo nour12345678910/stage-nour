@@ -1,0 +1,38 @@
+
+ <div class="row m-3" >
+  <!-- <div>     <button [routerLink]="['/ ']"  class="btn btn-primary"style="margin-left: 1150px;margin-top: 15px; margin-bottom: 40px;border-radius: 50%; " > Hide the List</button> </div> -->
+  <div *ngFor="let acc of items"  class="col-md-4 ">
+    <img class="card-img-top" src="{{acc.data.photo}}" style="width:250px;height: 300px; margin-left: 80px;border-radius: 15%;"/>
+    <!-- <div style="margin-left: 80px;">{{acc.data.nom}}</div> -->
+     <div class="card-body">
+       <!-- <button [routerLink]="['/voyage', v.id]"  class="btn btn-primary"  class="c1">Savoir plus de détails</button>  -->
+       <button [routerLink]="['/clothes', acc.id]"  class="btn btn-primary"style="margin-left: 150px;margin-top: 15px; margin-bottom: 15px;"  > Details</button> 
+
+    </div> </div>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+    

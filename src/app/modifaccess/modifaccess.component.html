@@ -1,0 +1,54 @@
+<!-- <ng-container *ngFor="let event of items">
+    <ng-container >
+      <div class="container">
+        <h2> modify the product {{event.data.nom}}</h2>
+        <form [formGroup]="VoyForm" (ngSubmit)="onSubmitForm()">
+         <div> <label> id</label>
+            <input type="text" class="form-control" formControlName="id" >
+          </div>
+       
+          <div>
+            <label> Noun</label>
+            <input type="text"  class="form-control" formControlName="libelle" >
+          </div>
+          <div>
+            <label> Price</label>
+            <input type="text" class="form-control" formControlName="prix" >
+          </div>
+          <div>
+            <label> Photo</label>
+            <input type="text" class="form-control" formControlName="photo" >
+          </div>
+          <button type="submit" class="btn btn-outline-success" [routerLink]="['/accessories']">submit</button>
+        </form>
+      </div>
+    </ng-container>
+  </ng-container> -->
+
+
+
+  <!-- <h1>helllllllllllllllloooooooooooooooooooo</h1> -->
+<ng-container *ngFor="let event of data ; index as i">
+  <ng-container *ngIf="event.id == id">
+<div class="container text-center">
+  <h2  class="text-center subheading" >Modifier le {{event.nom}}</h2>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f,event.id)">
+    <div id="i">
+      
+          <label for="">nom</label>
+          <input type="text"  name="categorie" [(ngModel)]="event.nom" #categorie="ngModel" ngModel  class=" form-control col-md-3" />
+          <label for="">Prix</label>
+          <!-- <input type="number"  name="prix" #prix="ngModel" [(ngModel)]="event.prix" ngModel  class=" form-control col-md-3" /> -->
+          <input type="number" placeholder="prix" [(ngModel)]="event.prix">
+
+         <label for="">Image</label>
+          <input  name="img"   #img="ngModel"  ngModel  [(ngModel)]="event.photo"  class=" form-control col-md-3" >
+      </div>
+      <br>
+      <!-- <button class="btn btn-shadow" >Ajouter</button> -->
+      <button class="btn btn-primary" (click)=" save1(i)">Save</button>
+
+    </form>
+</div>
+  </ng-container></ng-container>
+

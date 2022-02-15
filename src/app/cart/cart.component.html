@@ -1,0 +1,50 @@
+   <!-- <section>
+    <div class="#team-section text-center animated out" data-animation="fadeInUp" data-delay="0"> -->
+
+<app-vide *ngIf="!cart || cart.length<=0">
+</app-vide>
+<div *ngIf="cart || cart.length>0">
+  <h2>This is Your Cart</h2>
+<table class="table">
+ 
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Amount</td>
+        <td>Total</td>
+        <td>Options</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of cart ; index as i">
+        <td>{{t.nom}}</td>
+        <td>{{t.prix}}</td>
+        <td>
+            <input type="number" placeholder="Amount" [(ngModel)]="t.amount">
+        </td>
+        <td >{{t.prix * t.amount |currency}}</td>
+        <td>
+            <button class="btn btn-primary" (click)=" save(i)">Save</button>
+            
+            <button class="btn btn-danger"(click)="delete(i)" >Delete</button>
+            
+      </tr>
+      <tr>
+<td></td>
+<td></td>
+<td></td>
+
+
+
+      </tr>
+     
+    </tbody>
+  </table>
+ <h3  style="margin-left:400px;"> the total of your purchase is :<mark style="background-color: rgb(226, 147, 44);"> {{ getTotal() }}</mark> </h3>
+<br>
+<button style="margin-left:500px;" class="btn btn-primary" routerLink="/commande" >Validate the order</button>
+</div>
+            <!-- </div>
+   </section> -->
+  

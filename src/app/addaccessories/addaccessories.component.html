@@ -1,0 +1,57 @@
+<div class="container">
+
+    <h2> Add New Accessorie</h2>
+    <form [formGroup]="Form" (ngSubmit)="onSubmitForm()">
+        <div>
+            <label> Noun</label>
+            <input type="text" class="form-control" formControlName="nom">
+           
+        </div>
+
+        <div>
+            <label> Price</label>
+            <input type="number" class="form-control" formControlName="prix">
+        </div>
+
+     
+        <div>
+            <label> Url of the photo</label>
+            <input type="text" class="form-control" formControlName="photo">
+            
+        </div>
+       
+        <button type="submit" class="btn btn-outline-info" class="btn btn-primary">submit</button>
+        
+      
+    </form>
+</div>
+<br>
+<table class="table table-striped center table-primary table-bordered" >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Noun</th>
+        <th scope="col">Price</th>
+        <th scope="col">photo</th>
+        <th>Remove</th>
+        <!-- <th>Modification</th> -->
+
+    </tr>
+    </thead>
+    <tbody>
+  
+     <tr *ngFor="let item of items">
+        <td>{{item.id}}</td>
+        <td>{{item.data.nom}}</td>
+        <td>{{item.data.prix}}</td>
+        <td><img [src]="item.data.photo" style="width:50px;height:50px"></td>
+        <td> <button class="btn" (click)="delete(item)" class="btn btn-danger">Remove</button></td>
+        <!-- <td> <button class="btn"  class="btn btn-danger">Modifier</button></td> -->
+        <!-- <td><button [routerLink]="['/modifacess', item.id]"  class="btn btn-primary"style="margin-left: 150px;margin-top: 15px; margin-bottom: 15px;"  > Modification</button>        </td> -->
+        <!-- <td> <button  style="margin-right: 30px;"[routerLink]="['/admin',item.id]" class="btn btn-primary">Modifier</button>  -->
+
+      
+      </tr>
+    </tbody>
+  </table>
+

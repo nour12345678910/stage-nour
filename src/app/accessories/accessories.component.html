@@ -1,0 +1,32 @@
+ <form class="d-flex">
+ <input class="form-control me-2" type="search" placeholder="Search" name="rech" aria-label="Search" #rech >
+ <input type="button" class="btn btn-outline-success" (click)=" Oncherche(rech.value)" value="Search"/>
+ </form>
+
+<div class="row m-3" >
+  <div *ngFor="let acc of items"  class="col-md-4 ">
+    <img class="card-img-top" src="{{acc.data.photo}}" style="width:250px;height: 300px; margin-left: 80px;border-radius: 15%;"/>
+    <!-- <div style="margin-left: 80px;">{{acc.data.nom}}</div> -->
+    <button [routerLink]="['/accessories', acc.id]"  class="btn btn-primary" style="margin-left: 150px;margin-top: 15px; margin-bottom: 15px;" > Details</button> 
+
+     <div class="card-body">
+       <!-- <button [routerLink]="['/voyage', v.id]"  class="btn btn-primary"  class="c1">Savoir plus de détails</button>  -->
+
+    </div>  
+    <!-- <div class="container">
+        <div class=" text-center row" >
+     
+            <div  *ngFor="let acc of items" class="col-sm">
+            <div class=" card">
+            <div class="card-header">
+    
+             {{acc.data.nom }} <br></div>
+            <div class="card-body">
+            <img [src]=acc.data.photo><br>
+            Prix  : {{acc.data.prix}} Dt<br></div>
+            <div class="card-footer">
+       <div>detail</div>
+    
+    
+        </div>
+        </div></div></div></div> -->

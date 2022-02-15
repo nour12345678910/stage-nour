@@ -1,0 +1,22 @@
+
+     <h3>Modify the Clothes</h3>
+     <table class="table" style=" width: 150%;">
+         <thead>
+           <tr>
+             <th scope="col">Photo </th>
+             <th scope="col">Nom</th>
+             <th scope="col">Prix</th>
+             <th></th>
+            
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let t of items;index as i">
+             <th scope="row" class="text-center">  <img [src]="t.photo" style="width: 100px;"></th>
+             <td> {{t.nom|titlecase}}</td>
+             <td >{{t.prix}} DT</td>
+             <td> <button  style="margin-right: 30px;"[routerLink]="['/.admin',t.id]" class="btn btn-primary">Modifier</button> 
+                 <!-- <button (click)="supp(t)" class="btn btn-primary">Supprimer</button></td> -->
+           </tr>
+         </tbody>
+     </table>
